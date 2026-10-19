@@ -1,0 +1,17 @@
+name: set-default-priority
+on:
+  issues:
+    types: [opened]
+permissions:
+  issues: write
+jobs:
+  set-default-priority:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set default priority field
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+          ISSUE_NUMBER: ${{ github.event.issue.number }}
+        run: scripts/set-default-priority.sh
