@@ -1,0 +1,21 @@
+name: transition-to-in-review
+on:
+  pull_request:
+    types: [opened, ready_for_review, converted_to_draft, closed, reopened]
+
+permissions: {}
+jobs:
+  transition-to-in-review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Transition PR to "in review" or back to "in progress"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PROJECT_PAT }}
+          REPO: ${{ github.repository }}
+          MERGED: ${{ github.event.pull_request.merged }}
+          ACTION: ${{ github.event.action }}
+          BRANCH: ${{ github.head_ref }}
+          DRAFT: ${{ github.event.pull_request.draft }}
+
+        run: scripts/transition-to-in-review.sh
