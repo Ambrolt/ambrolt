@@ -5,7 +5,7 @@
 AI-powered command center serving as _"extra hands"_ for roookie and veteran
 entrepreneurs alike.
 
-Help them all the way from sourcing, marketing, sales, maybe refunds, etc.  
+Help them all the way from sourcing, marketing, sales, maybe refunds, etc.
 Any business under the sun. _"Use your own tools"_ and Ambrolt integrates with
 them. Whether it's Shopee/Lazada or Google Sheets, it has the seller covered.
 Need to publish ads or pubmats to various social media platforms, and Ambrolt
